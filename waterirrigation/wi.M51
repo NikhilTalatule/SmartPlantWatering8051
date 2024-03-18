@@ -1,0 +1,79 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        05/09/2022  20:39:50  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+B:\C51\BIN\BL51.EXE wi.obj TO wi RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  wi.obj (WI)
+  B:\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  wi (WI)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     000FH     UNIT         ?PR?MAIN?WI
+            CODE    080FH     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   wi (WI)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?WI
+
+
+
+SYMBOL TABLE OF MODULE:  wi (WI)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        WI
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  B:00B0H.5       PUBLIC        sensor
+  B:00A0H.0       PUBLIC        relay
+  C:0800H         PUBLIC        main
+  -------         PROC          MAIN
+  C:0800H         LINE#         4
+  C:0800H         LINE#         5
+  C:0800H         LINE#         6
+  C:0802H         LINE#         7
+BL51 BANKED LINKER/LOCATER V6.22                                                      05/09/2022  20:39:50  PAGE 2
+
+
+  C:0804H         LINE#         9
+  C:0804H         LINE#         10
+  C:0804H         LINE#         11
+  C:0807H         LINE#         13
+  C:080BH         LINE#         15
+  C:080DH         LINE#         17
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        WI
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 000FH BYTE ( 0%) *
+******************************************************************************
+
+Program Size: data=9.0 xdata=0 code=30
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
